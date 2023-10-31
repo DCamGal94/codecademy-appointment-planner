@@ -19,7 +19,7 @@ function App() {
   */
   const addContact = (name, phone, email) => {
     setContacts([...contacts, {name, phone, email}]);
-  }; // Define a callback function that, given a name, phone number, and email, adds a new contact object with that data to the array of contacts
+  }; // Define a callback function that, given a title, phone number, and email, adds a new contact object with that data to the array of contacts
 
   const addAppointment = (title, contact, date, time) => {
     setAppointments([...appointments, {title, contact, date, time}]);
