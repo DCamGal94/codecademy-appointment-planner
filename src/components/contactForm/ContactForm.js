@@ -9,44 +9,47 @@ export const ContactForm = ({
   setEmail,
   handleSubmit
 }) => {
-  // const { name, phone, email } = props.newContact;
-
-  // const handleChange = (e) => {
-  //   setNewContact({
-  //     ...newContact,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-
   return (
     <form onSubmit={handleSubmit}>
-      <input 
-        type="text"
-        name="name"
-        value={name}
-        onChange={setName} // handleChange
-        required
-      />
-      <input 
-        type="tel"
-        name="phone"
-        value={phone}
-        onChange={setPhone} // handleChange
-        pattern="[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}"
-        required
-      />
-      <input 
-        type="email"
-        name="email"
-        value={email}
-        onChange={setEmail} // handleChange
-        required
-      />
-      <input 
-        type="submit"
-        value="Add Contact" 
-      />
+      <label>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          placeholder="Contact Name"
+          aria-label="Contact Name"
+        />
+      </label>
+      <br />
+      <label>
+        <input
+          type="tel"
+          name="phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+          // regex is for US phone numbers
+          pattern="[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}"
+          placeholder="Contact Phone (###-###-####)"
+          aria-label="Contact Phone"
+        />
+      </label>
+      <br />
+      <label>
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          placeholder="Contact Email"
+          aria-label="Contact Email"
+        />
+      </label>
+      <br />
+      <input type="submit" value="Add Contact" aria-label="Add Contact"/>
     </form>
   );
 };
-
